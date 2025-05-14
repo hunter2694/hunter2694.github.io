@@ -1,3 +1,44 @@
-remote_theme: pages-themes/modernist@v0.2.0
+title: "My Cybersecurity Blog"
+description: "Write-ups, walkthroughs, and tutorials from my learning journey."
+baseurl: ""
+url: "https://hunter2694.github.io"
+
+theme: jekyll-theme-hacker
+
+author:
+  name: Hunter2694
+
 plugins:
-- jekyll-remote-theme 
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+paginate: 5
+paginate_path: "/page:num"
+
+collections:
+  posts:
+    output: true
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Hunter2694"
+
+sitemap:
+  filename: sitemap.xml
